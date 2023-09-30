@@ -1,5 +1,5 @@
 {
-	"name": "bumpcore/editor.php",
+	"name": "dtdi/editor.php",
 	"description": "PHP integration for Editor.js",
 	"type": "library",
 	"license": "MIT",

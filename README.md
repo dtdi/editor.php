@@ -356,7 +356,7 @@ class MyCustomBlock extends Block
 {
     public function render(): string
     {
-        return view('blocks.my-custom-block', ['data' => $this->data]);
+        return view('blocks.my-custom-block', ['data' => $this->data, 'tunes' => $this->tunes]);
     }
 }
 ```

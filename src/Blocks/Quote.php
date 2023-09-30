@@ -48,11 +48,11 @@ class Quote extends Block
         if (View::getFacadeRoot())
         {
             return view(sprintf('editor.php::%s.quote', EditorPhp::usingTemplate()))
-                ->with(['data' => $this->data])
+                ->with(['data' => $this->data, 'tunes' => $this->tunes])
                 ->render();
         }
 
-        return Helpers::renderNative(__DIR__ . sprintf('/../../resources/php/%s/quote.php', EditorPhp::usingTemplate()), ['data' => $this->data]);
+        return Helpers::renderNative(__DIR__ . sprintf('/../../resources/php/%s/quote.php', EditorPhp::usingTemplate()), ['data' => $this->data, 'tunes' => $this->tunes]);
     }
 
     /**

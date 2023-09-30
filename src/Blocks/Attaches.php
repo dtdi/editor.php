@@ -50,11 +50,11 @@ class Attaches extends Block
         if (View::getFacadeRoot())
         {
             return view(sprintf('editor.php::%s.attaches', EditorPhp::usingTemplate()))
-                ->with(['data' => $this->data])
+                ->with(['data' => $this->data, 'tunes' => $this->tunes])
                 ->render();
         }
 
-        return Helpers::renderNative(__DIR__ . sprintf('/../../resources/php/%s/attaches.php', EditorPhp::usingTemplate()), ['data' => $this->data]);
+        return Helpers::renderNative(__DIR__ . sprintf('/../../resources/php/%s/attaches.php', EditorPhp::usingTemplate()), ['data' => $this->data, 'tunes' => $this->tunes]);
     }
 
     /**

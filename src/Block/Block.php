@@ -25,6 +25,13 @@ abstract class Block implements Arrayable, Htmlable, Renderable
     public readonly Data $data;
 
     /**
+     * Tunes of the block.
+     *
+     * @var Data
+     */
+    public readonly Data $tunes;
+
+    /**
      * Belonging EditorPhp instance.
      *
      * @var EditorPhp|null
@@ -46,20 +53,21 @@ abstract class Block implements Arrayable, Htmlable, Renderable
      *
      * @return self
      */
-    public static function make(array $data = [], ?EditorPhp &$root = null): self
+    public static function make(array $data = [], array $tunes = [], ?EditorPhp &$root = null): self
     {
-        return new static($data, $root);
+        return new static($data, $tunes, $root);
     }
 
     /**
      * Constructor.
      *
      * @param array $data
+     * @param array $tunes
      * @param EditorPhp|null $root
      *
      * @return void
      */
-    public function __construct(array $data = [], ?EditorPhp &$root = null)
+    public function __construct(array $data = [], array $tunes = [] ?EditorPhp &$root = null)
     {
         $this->type = array_flip(Parser::$blocks)[static::class];
         $this->root = $root;
@@ -135,6 +143,7 @@ abstract class Block implements Arrayable, Htmlable, Renderable
     {
         return [
             'type' => $this->type,
+            'tunes' => $this->tunes->toArray(),
             'data' => $this->data->toArray(),
         ];
     }

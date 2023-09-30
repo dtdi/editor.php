@@ -67,7 +67,7 @@ abstract class Block implements Arrayable, Htmlable, Renderable
      *
      * @return void
      */
-    public function __construct(array $data = [], array $tunes = [] ?EditorPhp &$root = null)
+    public function __construct(array $data = [], array $tunes = [], ?EditorPhp &$root = null)
     {
         $this->type = array_flip(Parser::$blocks)[static::class];
         $this->root = $root;

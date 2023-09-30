@@ -72,6 +72,8 @@ abstract class Block implements Arrayable, Htmlable, Renderable
         $this->type = array_flip(Parser::$blocks)[static::class];
         $this->root = $root;
         $this->data = new Data($data, $this->allows(), $this->rules());
+        $this->tunes = new Data($tunes, "*", ['textVariant'=>'string','anchor.anchor'=>'string']);
+
     }
 
     /**

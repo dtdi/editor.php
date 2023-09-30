@@ -109,7 +109,7 @@ class Parser
                 throw new EditorPhpException('Unknown block type: ' . $type);
             }
 
-            $blocks->push(new (static::$blocks[$type])(Arr::get($block, 'data'),  Arr::get($block, 'tunes') , $root));
+            $blocks->push(new (static::$blocks[$type])(Arr::get($block, 'data'),  Arr::get($block, 'tunes', []) , $root));
         }
 
         return $blocks;

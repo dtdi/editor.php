@@ -164,7 +164,7 @@ class Parser
             'blocks.*' => 'present|array',
             'blocks.*.type' => 'required|string',
             'blocks.*.data' => 'present|array',
-            'blocks.*.tunes' => 'present|array',
+            'blocks.*.tunes' => 'array',
             'version' => 'required|string',
         ]);
 

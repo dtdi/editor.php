@@ -32,12 +32,12 @@ class LinkTool extends Block
      */
     public function rules(): array
     {
-        return [
+       return [
             'link' => 'url',
-            'meta.title' => 'string',
-            'meta.site_name' => 'string',
-            'meta.description' => 'string',
-            'meta.image.url' => 'url',
+            'meta.title' => 'nullable|string',
+            'meta.site_name' => 'nullable|string',
+            'meta.description' => 'nullable|string',
+            'meta.image.url' => 'nullable|url',
         ];
     }
 

@@ -9,19 +9,22 @@ use Illuminate\Support\Facades\View;
 
 class LinkTool extends Block
 {
-    /**
+        /**
      * Tag allow list for purifying data.
      *
      * @return array|string
      */
     public function allows(): array|string
     {
+      return "*";
         return [
             'link' => [],
             'meta.title' => [],
             'meta.site_name' => [],
             'meta.description' => [],
             'meta.image.url' => [],
+            'meta.type' => [],
+            'meta.id' => [],
         ];
     }
 
@@ -32,14 +35,17 @@ class LinkTool extends Block
      */
     public function rules(): array
     {
-       return [
+        return [
             'link' => 'url',
             'meta.title' => 'nullable|string',
+            'meta.type' => 'nullable|string',
+            'meta.id' => 'nullable|string',
             'meta.site_name' => 'nullable|string',
             'meta.description' => 'nullable|string',
             'meta.image.url' => 'nullable|url',
         ];
     }
+
 
     /**
      * Renderer for the block.
